@@ -1,3 +1,4 @@
+import java.util.stream.*;
 class gitassign
 {
 int partition(int arr[], int l, int h)
@@ -25,8 +26,7 @@ if (l < h)
 {
 int pi = partition(arr, l, h);
 sort(arr, l, pi-1);
-sort(arr, pi+1, h);
-}
+sort(arr, pi+1, h);}
 }
 static void printArray(int arr[])
 {
@@ -35,9 +35,16 @@ for (int i=0; i<n; ++i)
 System.out.print(arr[i]+" ");
 System.out.println();
 }
+void addnumbers()
+{
+int add = 0;
+
+}
 public static void main(String args[])
 {
 int arr[] = {56, 2, 34, 36, 12, 69};
+int sum = IntStream.of(arr).sum();
+System.out.println("The sum of numbers is " + sum);
 int n = arr.length;
  
 gitassign ob = new gitassign();
