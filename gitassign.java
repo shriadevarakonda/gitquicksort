@@ -1,10 +1,10 @@
 class gitassign
 {
-int partition(int arr[], int low, int high)
+int partition(int arr[], int l, int h)
 {
-int pivot = arr[high]; 
-int i = (low-1);
-for (int j=low; j<high; j++)
+int pivot = arr[h]; 
+int i = (l-1);
+for (int j=l; j<h; j++)
 {
 if (arr[j] <= pivot)
 {
@@ -15,17 +15,17 @@ arr[j] = temp;
 }
 }
 int temp = arr[i+1];
-arr[i+1] = arr[high];
-arr[high] = temp;
+arr[i+1] = arr[h];
+arr[h] = temp;
 return i+1;
 }
-void sort(int arr[], int low, int high)
+void sort(int arr[], int l, int h)
 {
-if (low < high)
+if (l < h)
 {
-int pi = partition(arr, low, high);
-sort(arr, low, pi-1);
-sort(arr, pi+1, high);
+int pi = partition(arr, l, h);
+sort(arr, l, pi-1);
+sort(arr, pi+1, h);
 }
 }
 static void printArray(int arr[])
